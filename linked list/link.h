@@ -4,11 +4,12 @@
 template <typename L>
 class list
 {
-public:
+protected:
 	int count;
 	nodeType <L> *first;
 	nodeType <L> *last;
 
+public:
 	Iterator<L> operator= (const list <L>&);
 	void initializedList();
 	const bool isEmptyList();

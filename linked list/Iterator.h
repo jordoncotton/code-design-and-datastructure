@@ -27,7 +27,7 @@ Iterator<I>::Iterator()
 template<typename I>
 Iterator<I>::Iterator(nodeType<I>* ptr)
 {
-	current = *ptr;
+	current = ptr;
 }
 
 template<typename I>
@@ -40,6 +40,7 @@ template<typename I>
 Iterator<I> Iterator<I>::operator++()
 {
 	current = current->next;
+	return current;
 }
 
 template<typename I>

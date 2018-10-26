@@ -1,4 +1,5 @@
-#include "link.h"
+#include "linklist.h"
+
 
 int main()
 {
@@ -21,9 +22,14 @@ int main()
 		++Iterator;
 	}
 
-	list<int> begin;
+	linklist<int> begin;
 	begin.initializedList();
 	begin.insertFirst(1);
-	list<int> end;
+	begin.insertLast(3);
+	begin.deleteNode(45);
+	linklist<int> end;
 	end.initializedList();
+	end.insertFirst(3);
+	end.insertLast(5);
+	end.deleteNode(7);
 }

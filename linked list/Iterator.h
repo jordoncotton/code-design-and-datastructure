@@ -2,7 +2,6 @@
 #include "node.h"
 
 template <typename I>
-
 class Iterator
 {
 public:

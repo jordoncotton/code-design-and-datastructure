@@ -1,7 +1,7 @@
 #pragma once
 #include "Iterator.h"
 
-template <typename L>
+template <class L>
 class list
 {
 protected:
@@ -18,11 +18,11 @@ public:
 	void destroyList();
 	L front();
 	L back();
-	bool search(const L&) = 0;
 
-	void insertFirst(const L&) = 0;
-	void insertLast(const L&) = 0;
-	void deleteNode(const L&) = 0;
+	virtual bool search(const L&) = 0;
+	virtual void insertFirst(const L&) = 0;
+	virtual void insertLast(const L&) = 0;
+	virtual void deleteNode(const L&) = 0;
 	
 	Iterator<L>begin();
 	Iterator<L>end();

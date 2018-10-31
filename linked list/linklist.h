@@ -19,16 +19,19 @@ bool linklist<LL>::search(const LL &)
 }
 
  template<typename LL>
-void linklist<LL>::insertFirst(const LL &)
+void linklist<LL>::insertFirst(const LL &beginning)
  {
+	start = beginning;
  }
 
  template<typename LL>
-void linklist<LL>::insertLast(const LL &)
+void linklist<LL>::insertLast(const LL &construct)
  {
+	last = construct;
  }
 
  template<typename LL>
-void linklist<LL>::deleteNode(const LL &)
+void linklist<LL>::deleteNode(const LL &ending)
  {
+	delete ending;
  }

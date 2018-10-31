@@ -1,2 +1,35 @@
 ﻿  main.cpp
-  linked list.vcxproj -> C:\Users\jordo\source\repos\code-design-and-datastructure\Project1\Debug\linked list.exe
+c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(24): error C2065: 'start': undeclared identifier
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(23): note: while compiling class template member function 'void linklist<int>::insertFirst(const LL &)'
+          with
+          [
+              LL=int
+          ]
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\main.cpp(27): note: see reference to function template instantiation 'void linklist<int>::insertFirst(const LL &)' being compiled
+          with
+          [
+              LL=int
+          ]
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\main.cpp(25): note: see reference to class template instantiation 'linklist<int>' being compiled
+c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(30): error C2065: 'last': undeclared identifier
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(29): note: while compiling class template member function 'void linklist<int>::insertLast(const LL &)'
+          with
+          [
+              LL=int
+          ]
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\main.cpp(28): note: see reference to function template instantiation 'void linklist<int>::insertLast(const LL &)' being compiled
+          with
+          [
+              LL=int
+          ]
+c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(36): error C2541: 'delete': cannot delete objects that are not pointers
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\linklist.h(35): note: while compiling class template member function 'void linklist<int>::deleteNode(const LL &)'
+          with
+          [
+              LL=int
+          ]
+  c:\users\s188044\source\repos\code-design-and-datastructure2\linked list\main.cpp(29): note: see reference to function template instantiation 'void linklist<int>::deleteNode(const LL &)' being compiled
+          with
+          [
+              LL=int
+          ]

@@ -33,5 +33,5 @@ void linklist<LL>::insertLast(const LL &construct)
  template<typename LL>
 void linklist<LL>::deleteNode(const LL &ending)
  {
-	delete ending;
+	delete nodeType<int>;
  }

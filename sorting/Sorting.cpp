@@ -24,10 +24,11 @@ Hero lowest(Hero arr[], int size)
 			}
 		}
 	}
+	return Hero();
 }
 
 int main()
 {
-	Hero something(100);
-	Hero something(100);  
+	Hero something;
+	Hero somethingelse;  
 }

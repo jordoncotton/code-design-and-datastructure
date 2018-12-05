@@ -15,6 +15,12 @@ public:
 template<typename LL>
 bool linklist<LL>::search(const LL &)
 {
+	nodeType<LL>* type = new nodeType<LL>{ LL };
+	for (int i = 0; i < this->count; i++)
+	{
+		if (type->info == LL)
+			return true;
+	}
 	return false;
 }
 

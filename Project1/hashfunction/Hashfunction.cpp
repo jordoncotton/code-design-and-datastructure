@@ -12,8 +12,5 @@ namespace Hashfunction {
 			return hash;
 	}
 }
-unsigned int Hashfunction::badHash(const char * data, unsigned int length)
-{
-	return 0;
-}
+
 

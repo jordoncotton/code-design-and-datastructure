@@ -32,14 +32,14 @@ Iterator<I>::Iterator(nodeType<I>* ptr)
 template<typename I>
 I Iterator<I>::operator*()
 {
-	return current->info;
+	return this->current->info;
 }
 
 template<typename I>
 Iterator<I> Iterator<I>::operator++()
 {
-	current = current->next;
-	return current;
+	this->current = this->current->next;
+	return *this;
 }
 
 template<typename I>

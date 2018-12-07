@@ -32,4 +32,6 @@ int main()
 	end.insertFirst(3);
 	end.insertLast(5);
 	end.deleteNode(7);
+
+	begin.print();
 }

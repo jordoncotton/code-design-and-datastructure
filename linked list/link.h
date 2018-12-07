@@ -39,6 +39,7 @@ template<typename L>
 Iterator<L>list<L>::operator=(const list<L>&elsewhere)
 {
 	copyList(elsewhere);
+	return *this;
 }
 
 template<typename L>
@@ -66,11 +67,16 @@ const bool list<L>::isEmptyList()
 template<typename L>
 const void list<L>::print()
 {
+	if (isEmptyList() == true)
+	{
+		std::cout << "NOTHING IN THE LIST" << std::endl;
+	}
+
 	nodeType<L>* start = this->first;
 	int i = 1;
 	while (start != last)
 	{
-		std::cout << i << ": " << start->data << std::endl;
+		std::cout << i << ": " << start->info << std::endl;
 		start = start->next;
 		i++;
 	}
@@ -96,6 +102,7 @@ void list<L>::destroyList()
 		start = start->next;
 		count--;
 	}
+	initializedList();
 }
 
 template<typename L>

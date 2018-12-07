@@ -10,7 +10,7 @@ struct Hero
 	}
 };
 
-Hero lowest(Hero arr[], int size)
+Hero lowest(Hero arr[], int size, sometimes)
 {
 	for (int i = 0; i < size; i++)
 	{

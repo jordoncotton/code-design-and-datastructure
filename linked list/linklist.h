@@ -13,22 +13,102 @@ public:
 };
 
 template<typename LL>
-bool linklist<LL>::search(const LL &)
+bool linklist<LL>::search(const LL & word)
 {
+	nodeType<LL>* type = new nodeType<LL>{ word };
+	for (int i = 0; i < this->count; i++)
+	{
+		if (type->info == word)
+			return true;
+	}
 	return false;
 }
 
  template<typename LL>
-void linklist<LL>::insertFirst(const LL &)
+void linklist<LL>::insertFirst(const LL &add)
  {
+	if (this->count == 2)
+	{
+		this->first->next = this->last;
+	}
+	nodeType<LL>* node = new nodeType<LL>;
+	node->info = add;
+	this->count++;
+
+	if (this->first == nullptr)
+	{
+		this->first = node;
+		if (this->last == nullptr)
+		{
+			this->last = node;
+		}
+	}
+	else
+	{
+		node->next = this->first;
+		this->first = node;
+	}
  }
 
  template<typename LL>
-void linklist<LL>::insertLast(const LL &)
+void linklist<LL>::insertLast(const LL & sub)
  {
+	if (this->count == 2)
+	{
+		this->first->next = this->last;
+	}
+	nodeType<LL>* node = new nodeType<LL>{ sub };
+	this->count++;
+
+	if (this->last == nullptr)
+	{
+		this->last = node;
+		if (this->first == nullptr)
+		{
+			this->first = node;
+		}
+	}
+	else
+	{
+		this->last->next = node;
+		this->last = node;
+	}
+	this->last->next = nullptr;
  }
 
  template<typename LL>
-void linklist<LL>::deleteNode(const LL &)
+void linklist<LL>::deleteNode(const LL & done)
  {
+	if (this->isEmptyList() == false)
+	{
+		nodeType<LL>* takeaway = this->first, *trail = this->first;
+		if (done == this->first->info)
+		{
+			this->first = this->first->next;
+			delete takeaway;
+			this->count--;
+		}
+		else if (done == this->last->info)
+		{
+			for (int i = 0; i < this->count - 2; i++)
+			{
+				takeaway = takeaway->next;
+				this->last = takeaway;
+				delete takeaway;
+				this->count--;
+			}
+		}
+		else
+		{
+			takeaway = takeaway->next;
+			while (takeaway->info != done)
+			{
+				takeaway = takeaway->next;
+				trail = trail->next;
+			}
+			trail->next = takeaway->next;
+			delete takeaway;
+			this->count--;
+		}
+	}
  }

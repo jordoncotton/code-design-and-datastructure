@@ -2,6 +2,8 @@
 #include "HashFunction.h"
 
 namespace Hashfunction {
+	
+	//implemenatation of a basic addition hash 
 	unsigned int badHash(const char* data, unsigned int length)
 	{
 		unsigned int hash = 0;

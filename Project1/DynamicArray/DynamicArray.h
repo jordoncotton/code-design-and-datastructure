@@ -85,7 +85,7 @@ void DynamicArray<D>::InsertLast(D something)
 	//Space += 1;
 
 	//return;
-	
+	//
 }
 
 template<class D>

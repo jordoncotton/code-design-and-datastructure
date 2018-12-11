@@ -29,6 +29,7 @@ int main()
 	begin.insertFirst(8);
 	begin.deleteNode(3);
 	
+
 	/*linklist<int> end;
 	end.initializedList();
 	end.insertFirst(3);
@@ -36,4 +37,6 @@ int main()
 	end.deleteNode(3);*/
 
 	begin.print();
+
+	system("pause");
 }

@@ -146,8 +146,7 @@ list<L>::list(const list<L>&something)
 template<typename L>
 list<L>::~list()
 {
-	first = nullptr;
-	last = nullptr;
+	
 	destroyList();
 }
 

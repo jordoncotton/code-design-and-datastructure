@@ -26,12 +26,14 @@ int main()
 	begin.initializedList();
 	begin.insertFirst(1);
 	begin.insertLast(3);
-	begin.deleteNode(45);
-	linklist<int> end;
+	begin.insertFirst(8);
+	begin.deleteNode(3);
+	
+	/*linklist<int> end;
 	end.initializedList();
 	end.insertFirst(3);
 	end.insertLast(5);
-	end.deleteNode(7);
+	end.deleteNode(3);*/
 
 	begin.print();
 }

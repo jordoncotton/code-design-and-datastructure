@@ -28,7 +28,7 @@ int main()
 	begin.insertLast(3);
 	begin.insertFirst(8);
 	begin.deleteNode(3);
-	
+	begin.destroyList();
 
 	/*linklist<int> end;
 	end.initializedList();

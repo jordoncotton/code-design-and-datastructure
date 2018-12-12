@@ -67,14 +67,14 @@ const bool list<L>::isEmptyList()
 template<typename L>
 const void list<L>::print()
 {
-	if (isEmptyList() == true)
+	if (isEmptyList())
 	{
 		std::cout << "NOTHING IN THE LIST" << std::endl;
 	}
 
 	nodeType<L>* start = this->first;
 	int i = 1;
-	while (start != last)
+	while (i <= count)
 	{
 		std::cout << i << ": " << start->info << std::endl;
 		start = start->next;
@@ -92,14 +92,14 @@ template<typename L>
 void list<L>::destroyList()
 {
 	nodeType<L>*start = this->first;
-	start = start->next;
+	
 	nodeType<L>*trail = this->first;
 
-	while (trail != last)
+	while (count != 0)
 	{
+		start = &(*start->next);
 		delete trail;
-		trail = start;
-		start = start->next;
+		trail = &(*start);
 		count--;
 	}
 	initializedList();

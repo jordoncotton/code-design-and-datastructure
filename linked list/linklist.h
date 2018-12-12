@@ -27,46 +27,34 @@ bool linklist<LL>::search(const LL & word)
  template<typename LL>
 void linklist<LL>::insertFirst(const LL &add)
  {
-	if (this->count == 2)
-	{
-		this->first->next = this->last;
-	}
 	nodeType<LL>* node = new nodeType<LL>;
 	node->info = add;
-	this->count++;
+	
 
-	if (this->first == nullptr)
+	if (this->count == 0)
 	{
 		this->first = node;
-		if (this->last == nullptr)
-		{
-			this->last = node;
-		}
+		this->last = node;
+		this->count++;
 	}
 	else
 	{
 		node->next = this->first;
 		this->first = node;
+		this->count++;
 	}
  }
 
  template<typename LL>
 void linklist<LL>::insertLast(const LL & sub)
  {
-	if (this->count == 2)
-	{
-		this->first->next = this->last;
-	}
 	nodeType<LL>* node = new nodeType<LL>{ sub };
 	this->count++;
 
 	if (this->last == nullptr)
 	{
 		this->last = node;
-		if (this->first == nullptr)
-		{
-			this->first = node;
-		}
+		this->first = node;
 	}
 	else
 	{

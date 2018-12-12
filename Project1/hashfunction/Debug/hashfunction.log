@@ -1,2 +1,4 @@
 ﻿  Hashfunction.cpp
-c:\users\jordo\source\repos\code-design-and-datastructure\project1\hashfunction\hashfunction.h(8): error C2062: type 'int' unexpected
+c:\users\s188044\source\repos\code-design-and-datastructure\project1\hashfunction\hashfunction.h(8): error C2059: syntax error: 'function-style cast'
+c:\users\s188044\source\repos\code-design-and-datastructure\project1\hashfunction\hashfunction.h(8): error C2143: syntax error: missing ';' before '{'
+c:\users\s188044\source\repos\code-design-and-datastructure\project1\hashfunction\hashfunction.h(8): error C2447: '{': missing function header (old-style formal list?)

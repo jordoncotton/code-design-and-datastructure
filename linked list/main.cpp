@@ -23,55 +23,15 @@ int main()
 	}
 
 	linklist<int> begin;
-	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(1);
+	begin.insertLast(2);
 	begin.insertLast(3);
-	begin.deleteNode(1);
-	begin.print();
-	system("pause");
-
-	begin.destroyList();
-	begin.initializedList();
-	begin.insertFirst(2);
-	begin.insertLast(5);
-	begin.deleteNode(2);
-	begin.print();
-	system("pause");
-
-	begin.destroyList();
-	begin.initializedList();
-	begin.insertFirst(4);
-	begin.insertLast(6);
-	begin.deleteNode(4);
-	begin.print();
-	system("pause");
-
-	begin.destroyList();
-	begin.initializedList();
-	begin.insertFirst(7);
-	begin.insertLast(8);
-	begin.deleteNode(7);
-	begin.print();
-	system("pause");
-
-	begin.destroyList();
-	begin.initializedList();
-	begin.insertFirst(5);
 	begin.insertLast(4);
-	begin.insertFirst(3);
-	begin.insertLast(8);
-	begin.deleteNode(8);
+	begin.insertLast(5);
 	begin.print();
-	system("pause");
-
-	begin.destroyList();
-	begin.initializedList();
-	begin.insertFirst(7);
-	begin.insertLast(6);
-	begin.insertFirst(9);
-	begin.insertLast(0);
-	begin.deleteNode(0);
+	std::cout << "  " << std::endl;
+	begin.deleteNode(3);
 	begin.print();
 	system("pause");
 }

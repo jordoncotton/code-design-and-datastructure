@@ -61,7 +61,7 @@ void linklist<LL>::insertLast(const LL & sub)
 	{
 		this->last->next = node;
 		this->last = node;
-		node->next = nullptr;
+		this->last->next = nullptr;
 		this->count++;
 	}
  }
@@ -78,13 +78,13 @@ void linklist<LL>::deleteNode(const LL & done)
 		this->initializedList();
 		return;
 	}
-
 	takeaway = this->first;
 	trail = this->first;
 	if (this->first->info == done)
 	{
-		this->first = this->first->next;
-		delete takeaway;
+		takeaway = takeaway->next;
+		delete this->first;
+		this->first = takeaway;
 		this->count--;
 		return;
 	}
@@ -94,17 +94,15 @@ void linklist<LL>::deleteNode(const LL & done)
 	{
 
 		if (takeaway->info == done)
-		{
-			if (takeaway == this->last)
+		{	//checking if last info is equal to done. The last is assigned to trail,
+			//delete the takeaway after trail and return.
+			if (this->last->info == done)
 			{
 				this->last = trail;
-				trail->next = nullptr;
 				delete takeaway;
-				this->count--;
 				return;
 			}
-
-			this->first = this->first->next;
+			trail->next = takeaway->next;
 			delete takeaway;
 			this->count--;
 			return;

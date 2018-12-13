@@ -50,7 +50,6 @@ void linklist<LL>::insertFirst(const LL &add)
 void linklist<LL>::insertLast(const LL & sub)
  {
 	nodeType<LL>* node = new nodeType<LL>{ sub };
-	this->count++;
 
 	if (this->isEmptyList())
 	{

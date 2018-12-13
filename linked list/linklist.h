@@ -31,10 +31,11 @@ void linklist<LL>::insertFirst(const LL &add)
 	node->info = add;
 	
 
-	if (this->count == 0)
+	if (this->isEmptyList())
 	{
 		this->first = node;
 		this->last = node;
+		node->next = nullptr;
 		this->count++;
 	}
 	else
@@ -51,52 +52,68 @@ void linklist<LL>::insertLast(const LL & sub)
 	nodeType<LL>* node = new nodeType<LL>{ sub };
 	this->count++;
 
-	if (this->last == nullptr)
+	if (this->isEmptyList())
 	{
 		this->last = node;
 		this->first = node;
+		this->count++;
 	}
 	else
 	{
 		this->last->next = node;
 		this->last = node;
+		node->next = nullptr;
+		this->count++;
 	}
-	this->last->next = nullptr;
  }
 
  template<typename LL>
 void linklist<LL>::deleteNode(const LL & done)
  {
-	if (this->isEmptyList() == false)
+	nodeType<LL>* takeaway;
+	nodeType<LL>* trail;
+
+	if (this->count == 1)
 	{
-		nodeType<LL>* takeaway = this->first, *trail = this->first;
-		if (done == this->first->info)
+		delete this->first;
+		this->initializedList();
+		return;
+	}
+
+	takeaway = this->first;
+	trail = this->first;
+
+	for (int i = 0; i, this->count; i++)
+	{
+		if (takeaway->info == done)
 		{
 			this->first = this->first->next;
 			delete takeaway;
 			this->count--;
+			return;
 		}
-		else if (done == this->last->info)
-		{
-			for (int i = 0; i < this->count - 2; i++)
-			{
-				takeaway = takeaway->next;
-				this->last = takeaway;
-				delete takeaway;
-				this->count--;
-			}
-		}
-		else
+
+		if (takeaway->info != done)
 		{
 			takeaway = takeaway->next;
-			while (takeaway->info != done)
+
+			if (takeaway == this->last)
 			{
-				takeaway = takeaway->next;
-				trail = trail->next;
+				this->last = trail;
+				trail->next = nullptr;
+				delete takeaway;
+				this->count--;
+				return;
 			}
-			trail->next = takeaway->next;
-			delete takeaway;
-			this->count--;
+
+			if (takeaway->info == done)
+			{
+				trail->next = takeaway->next;
+				delete takeaway;
+				this->count--;
+				return;
+			}
+			trail = trail->next;
 		}
 	}
  }

@@ -91,18 +91,25 @@ const int list<L>::length()
 template<typename L>
 void list<L>::destroyList()
 {
-	nodeType<L>*start = this->first;
-	
-	nodeType<L>*trail = this->first;
+	nodeType<L>* node = new nodeType<L>;
+	int temp = count;
 
-	while (count != 0)
+	for (int i = 0; i < temp; i++)
 	{
-		start = &(*start->next);
-		delete trail;
-		trail = &(*start);
-		count--;
+		node = this->first;
+		if (count == 1)
+		{
+			delete first;
+			initializedList();
+			return;
+		}
+		else
+		{
+			first = first->next;
+			delete node;
+			count--;
+		}
 	}
-	initializedList();
 }
 
 template<typename L>

@@ -81,21 +81,20 @@ void linklist<LL>::deleteNode(const LL & done)
 
 	takeaway = this->first;
 	trail = this->first;
-
-	for (int i = 0; i, this->count; i++)
+	if (this->first->info == done)
 	{
+		this->first = this->first->next;
+		delete takeaway;
+		this->count--;
+		return;
+	}
+	takeaway = takeaway->next;
+
+	for (int i = 0; i < this->count; i++)
+	{
+
 		if (takeaway->info == done)
 		{
-			this->first = this->first->next;
-			delete takeaway;
-			this->count--;
-			return;
-		}
-
-		if (takeaway->info != done)
-		{
-			takeaway = takeaway->next;
-
 			if (takeaway == this->last)
 			{
 				this->last = trail;
@@ -105,14 +104,18 @@ void linklist<LL>::deleteNode(const LL & done)
 				return;
 			}
 
-			if (takeaway->info == done)
-			{
-				trail->next = takeaway->next;
-				delete takeaway;
-				this->count--;
-				return;
-			}
-			trail = trail->next;
+			this->first = this->first->next;
+			delete takeaway;
+			this->count--;
+			return;
 		}
+
+		if (takeaway->info != done)
+		{
+			trail = trail->next;
+			takeaway = takeaway->next;
+		}
+		
 	}
  }
+

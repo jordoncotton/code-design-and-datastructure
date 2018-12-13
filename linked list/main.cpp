@@ -23,6 +23,7 @@ int main()
 	}
 
 	linklist<int> begin;
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(1);
 	begin.insertLast(3);
@@ -30,6 +31,7 @@ int main()
 	begin.print();
 	system("pause");
 
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(2);
 	begin.insertLast(5);
@@ -37,6 +39,7 @@ int main()
 	begin.print();
 	system("pause");
 
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(4);
 	begin.insertLast(6);
@@ -44,6 +47,7 @@ int main()
 	begin.print();
 	system("pause");
 
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(7);
 	begin.insertLast(8);
@@ -51,6 +55,7 @@ int main()
 	begin.print();
 	system("pause");
 
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(5);
 	begin.insertLast(4);
@@ -60,6 +65,7 @@ int main()
 	begin.print();
 	system("pause");
 
+	begin.destroyList();
 	begin.initializedList();
 	begin.insertFirst(7);
 	begin.insertLast(6);
@@ -67,18 +73,5 @@ int main()
 	begin.insertLast(0);
 	begin.deleteNode(0);
 	begin.print();
-	system("pause");
-
-	
-	begin.destroyList();
-
-	/*linklist<int> end;
-	end.initializedList();
-	end.insertFirst(3);
-	end.insertLast(5);
-	end.deleteNode(3);*/
-
-	begin.print();
-
 	system("pause");
 }
